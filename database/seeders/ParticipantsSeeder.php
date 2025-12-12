@@ -16,85 +16,85 @@ class ParticipantsSeeder extends Seeder
         $participants = [
             [
                 'name' => json_encode([
-                    'en' => 'Sarah Johnson',
-                    'tr' => 'Sarah Johnson',
-                    'uz' => 'Sara Jonson'
+                    'en' => 'Newly Graduated Agricultural Engineers',
+                    'tr' => 'Yeni Mezun Ziraat Mühendisleri',
+                    'uz' => 'Havaskor Yosh Agronomlar'
                 ]),
                 'organization' => json_encode([
-                    'en' => 'Green Valley Farm',
-                    'tr' => 'Yeşil Vadi Çiftliği',
-                    'uz' => 'Yashil vodiy fermasi'
+                    'en' => 'Fresh Graduates',
+                    'tr' => 'Yeni Mezunlar',
+                    'uz' => 'Yangi Bitiruvchilar'
                 ]),
-                'photo' => '/images/participants/participant1.jpg',
+                'photo' => '/images/participants/graduates.jpg',
                 'bio' => json_encode([
-                    'en' => 'Sustainable farming advocate with 10 years of experience',
-                    'tr' => '10 yıllık deneyime sahip sürdürülebilir tarım savunucusu',
-                    'uz' => '10 yillik tajribaga ega barqaror dehqonchilik tarafdori'
+                    'en' => 'Fresh graduates seeking practical experience and industry-ready skills to launch their agricultural careers.',
+                    'tr' => 'Tarım kariyerlerini başlatmak için pratik deneyim ve sektöre hazır beceriler arayan yeni mezunlar.',
+                    'uz' => 'Qishloq xo\'jaligi karerasini boshlash uchun amaliy tajriba va sohaga tayyor ko\'nikmalarni izlayotgan yangi bitiruvchilar.'
                 ]),
-                'country' => 'USA',
+                'country' => null,
                 'is_active' => true,
                 'order' => 1
             ],
             [
                 'name' => json_encode([
-                    'en' => 'Dmitry Ivanov',
-                    'tr' => 'Dmitry Ivanov',
-                    'uz' => 'Dmitriy Ivanov'
+                    'en' => 'Active Farmers',
+                    'tr' => 'Aktif Çiftçiler',
+                    'uz' => 'Faol Dehqonlar'
                 ]),
                 'organization' => json_encode([
-                    'en' => 'Siberian Organics',
-                    'tr' => 'Sibirya Organik Ürünleri',
-                    'uz' => 'Sibir organikasi'
+                    'en' => 'Experienced Farmers',
+                    'tr' => 'Deneyimli Çiftçiler',
+                    'uz' => 'Tajribali Dehqonlar'
                 ]),
-                'photo' => '/images/participants/participant2.jpg',
+                'photo' => '/images/participants/farmers.jpg',
                 'bio' => json_encode([
-                    'en' => 'Pioneering organic farming in cold climates',
-                    'tr' => 'Soğuk iklimlerde organik tarımda öncü',
-                    'uz' => 'Sovuq iqlimda organik dehqonchilik kashshofi'
+                    'en' => 'Experienced farmers looking to modernize their practices and increase productivity with new techniques.',
+                    'tr' => 'Uygulamalarını modernize etmek ve yeni tekniklerle verimliliği artırmak isteyen deneyimli çiftçiler.',
+                    'uz' => 'O\'z amaliyotlarini modernizatsiya qilish va yangi texnikalar bilan samaradorlikni oshirishga intilayotgan tajribali dehqonlar.'
                 ]),
-                'country' => 'Russia',
+                'country' => null,
                 'is_active' => true,
                 'order' => 2
             ],
             [
                 'name' => json_encode([
-                    'en' => 'Fatima Karimova',
-                    'tr' => 'Fatima Karimova',
-                    'uz' => 'Fotima Karimova'
+                    'en' => 'Entrepreneurs Looking to Start a Business in Agriculture',
+                    'tr' => 'Tarım Alanında İş Kurmak İsteyen Girişimciler',
+                    'uz' => 'Qishloq Xo\'jaligida Biznes Boshlamoqchi Bo\'lgan Tadbirkorlar'
                 ]),
                 'organization' => json_encode([
-                    'en' => 'Silk Road Farms',
-                    'tr' => 'İpek Yolu Çiftlikleri',
-                    'uz' => 'Ipak yo\'li fermalari'
+                    'en' => 'Aspiring Entrepreneurs',
+                    'tr' => 'Girişimciler',
+                    'uz' => 'Tadbirkorlar'
                 ]),
-                'photo' => '/images/participants/participant3.jpg',
+                'photo' => '/images/participants/entrepreneurs.jpg',
                 'bio' => json_encode([
-                    'en' => 'Expert in traditional and modern farming techniques',
-                    'tr' => 'Geleneksel ve modern tarım teknikleri uzmanı',
-                    'uz' => 'An\'anaviy va zamonaviy dehqonchilik usullari bo\'yicha mutaxassis'
+                    'en' => 'Business-minded individuals ready to venture into agricultural enterprises with proper training and guidance.',
+                    'tr' => 'Doğru eğitim ve rehberlikle tarım işletmelerine girmeye hazır iş odaklı bireyler.',
+                    'uz' => 'To\'g\'ri ta\'lim va yo\'l-yo\'riq bilan qishloq xo\'jaligi korxonalariga kirishga tayyor biznesga moyil shaxslar.'
                 ]),
-                'country' => 'Uzbekistan',
+                'country' => null,
                 'is_active' => true,
                 'order' => 3
             ],
             [
                 'name' => json_encode([
-                    'en' => 'Carlos Rodriguez',
-                    'tr' => 'Carlos Rodriguez',
-                    'uz' => 'Karlos Rodriges'
+                    'en' => 'Anyone Interested in Agricultural Technologies',
+                    'tr' => 'Tarım Teknolojilerine İlgi Duyan Herkes',
+                    'uz' => 'Qishloq Xo\'jaligi Texnologiyalariga Qiziqqan Har Bir Kishi'
                 ]),
                 'organization' => json_encode([
-                    'en' => 'Mediterranean Agriculture Co.',
-                    'tr' => 'Akdeniz Tarım Şirketi',
-                    'uz' => 'O\'rta er dengizi qishloq xo\'jaligi kompaniyasi'
+                    'en' => 'Agricultural Enthusiasts',
+                    'tr' => 'Tarım Meraklıları',
+                    'uz' => 'Qishloq Xo\'jaligi Ishqibozlari'
                 ]),
-                'photo' => '/images/participants/participant4.jpg',
+                'photo' => '/images/participants/enthusiasts.jpg',
                 'bio' => json_encode([
-                    'en' => 'Specialist in sustainable irrigation systems',
-                    'tr' => 'Sürdürülebilir sulama sistemleri uzmanı',
-                    'uz' => 'Barqaror sug\'orish tizimlari bo\'yicha mutaxassis'
+                    'en' => 'Enthusiasts passionate about learning modern farming methods and contributing to sustainable agriculture.',
+                    'tr' => 'Modern tarım yöntemlerini öğrenmeye ve sürdürülebilir tarıma katkıda bulunmaya tutkulu meraklılar.',
+                    'uz' => 'Zamonaviy dehqonchilik usullarini o\'rganishga va barqaror qishloq xo\'jaligiga hissa qo\'shishga ishtiyoqli ishqibozlar.'
                 ]),
-                'country' => 'Spain',
+                'country' => null,
                 'is_active' => true,
                 'order' => 4
             ],

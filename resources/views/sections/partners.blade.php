@@ -1,15 +1,3 @@
-@php
-    $partners = [
-        // Placeholder partners - will be populated later
-        ['name' => '', 'logo' => ''],
-        ['name' => '', 'logo' => ''],
-        ['name' => '', 'logo' => ''],
-        ['name' => '', 'logo' => ''],
-        ['name' => '', 'logo' => ''],
-        ['name' => '', 'logo' => ''],
-    ];
-@endphp
-
 <section id="partners" class="section-padding partners-bg relative">
     <!-- Animated Background -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
@@ -31,39 +19,55 @@
              @mouseenter="$el.style.animationPlayState = 'paused'"
              @mouseleave="$el.style.animationPlayState = 'running'">
             <!-- First set of cards -->
-            <template x-for="(partner, index) in {{ \Illuminate\Support\Js::from($partners) }}" :key="`first-${index}`">
+            @foreach($partners as $partner)
                 <div class="group cursor-pointer flex-shrink-0 w-[280px] md:w-[320px] partner-card">
-                    <div class="glass-card rounded-2xl p-8 border-2 border-border/50 hover:border-primary/50 transition-all duration-300 h-[200px] flex flex-col items-center justify-center gap-6 shadow-card hover:shadow-[0_20px_60px_rgba(74,222,128,0.3)]">
-                        <!-- Logo Placeholder -->
-                        <div class="w-24 h-24 rounded-xl bg-muted/30 flex items-center justify-center group-hover:bg-muted/50 transition-colors duration-300">
-                            <svg class="w-12 h-12 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
+                    <a href="{{ $partner->website_url }}" target="_blank" class="block">
+                        <div class="glass-card rounded-2xl p-8 border-2 border-border/50 hover:border-primary/50 transition-all duration-300 h-[200px] flex flex-col items-center justify-center gap-6 shadow-card hover:shadow-[0_20px_60px_rgba(74,222,128,0.3)]">
+                            <!-- Logo -->
+                            <div class="w-24 h-24 rounded-xl bg-muted/30 flex items-center justify-center group-hover:bg-muted/50 transition-colors duration-300 overflow-hidden">
+                                @if($partner->logo && file_exists(public_path($partner->logo)))
+                                    <img src="{{ $partner->logo }}" alt="{{ $partner->getName() }}" class="w-full h-full object-contain">
+                                @else
+                                    <svg class="w-12 h-12 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                @endif
+                            </div>
+                            <!-- Name -->
+                            <div class="text-center">
+                                <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                                    {{ $partner->getName() }}
+                                </h3>
+                            </div>
                         </div>
-                        <!-- Name Placeholder -->
-                        <div class="text-center">
-                            <div class="h-6 w-32 bg-muted/30 rounded-lg group-hover:bg-muted/50 transition-colors duration-300"></div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
-            </template>
+            @endforeach
             <!-- Duplicate set for seamless loop -->
-            <template x-for="(partner, index) in {{ \Illuminate\Support\Js::from($partners) }}" :key="`second-${index}`">
+            @foreach($partners as $partner)
                 <div class="group cursor-pointer flex-shrink-0 w-[280px] md:w-[320px] partner-card">
-                    <div class="glass-card rounded-2xl p-8 border-2 border-border/50 hover:border-primary/50 transition-all duration-300 h-[200px] flex flex-col items-center justify-center gap-6 shadow-card hover:shadow-[0_20px_60px_rgba(74,222,128,0.3)]">
-                        <!-- Logo Placeholder -->
-                        <div class="w-24 h-24 rounded-xl bg-muted/30 flex items-center justify-center group-hover:bg-muted/50 transition-colors duration-300">
-                            <svg class="w-12 h-12 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                            </svg>
+                    <a href="{{ $partner->website_url }}" target="_blank" class="block">
+                        <div class="glass-card rounded-2xl p-8 border-2 border-border/50 hover:border-primary/50 transition-all duration-300 h-[200px] flex flex-col items-center justify-center gap-6 shadow-card hover:shadow-[0_20px_60px_rgba(74,222,128,0.3)]">
+                            <!-- Logo -->
+                            <div class="w-24 h-24 rounded-xl bg-muted/30 flex items-center justify-center group-hover:bg-muted/50 transition-colors duration-300 overflow-hidden">
+                                @if($partner->logo && file_exists(public_path($partner->logo)))
+                                    <img src="{{ $partner->logo }}" alt="{{ $partner->getName() }}" class="w-full h-full object-contain">
+                                @else
+                                    <svg class="w-12 h-12 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                    </svg>
+                                @endif
+                            </div>
+                            <!-- Name -->
+                            <div class="text-center">
+                                <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors duration-300">
+                                    {{ $partner->getName() }}
+                                </h3>
+                            </div>
                         </div>
-                        <!-- Name Placeholder -->
-                        <div class="text-center">
-                            <div class="h-6 w-32 bg-muted/30 rounded-lg group-hover:bg-muted/50 transition-colors duration-300"></div>
-                        </div>
-                    </div>
+                    </a>
                 </div>
-            </template>
+            @endforeach
         </div>
     </div>
 </section>

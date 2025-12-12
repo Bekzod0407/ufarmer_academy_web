@@ -15,22 +15,15 @@
         <div x-data="{
             currentIndex: 0,
             isTransitioning: false,
-            testimonials: [
-                {
-                    name: 'Fazliddin Ibragimov',
-                    role: 'Director',
-                    location: 'UFARMER Academy',
-                    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80',
-                    content: `Agriculture is not merely about cultivating the land; it is also a science and a way of life that shapes the future. As the UFARMER Training Center, we set out on this journey to nurture individuals who will carry the powerful potential of agriculture into the future.\n\nToday's agriculture must be supported not only by experience but also by technology and knowledge. That's why the greatest need of young agricultural engineers and farmers is a practical, innovative, and sustainable approach to education. UFARMER was established precisely to meet this need.\n\nEvery training we offer at our center aims to solve real problems encountered in the field, transform theoretical knowledge into practice, and add value to our participants. Our goal is not only to transfer knowledge but also to raise entrepreneurial, visionary, and productive agricultural professionals.\n\nFor a productive future in agriculture, we invite everyone who believes in education and collective production to join the UFARMER family.\n\nWith the hope of greening the future together through the power of the land.`
-                },
-                {
-                    name: 'Prof. Dr. Süleyman Kodal',
-                    role: 'Academic Manager',
-                    location: 'UFARMER Academy',
-                    image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=200&q=80',
-                    content: `With the ever-changing global order and climate conditions, agriculture has become one of the most dynamic fields requiring continuous adaptation, knowledge, and technological innovation. Coping with this transformation is only possible through high-quality education and hands-on learning.\n\nAt the UFARMER Training Center, we prioritize both academic discipline and field experience in designing our educational programs. Our curricula are developed based on up-to-date scientific data, next-generation agricultural technologies, and methods actively used in the field.\n\nOur goal is not only to equip our participants with knowledge, but also to ensure they become individuals capable of applying that knowledge directly, analyzing situations, and producing effective solutions. In each training module, we focus on preparing our participants to become the agricultural professionals of tomorrow.\n\nAs the UFARMER family, we invite all dedicated engineers and producers to be part of this transformation. Let's learn, produce, and grow together.`
-                }
-            ],
+            testimonials: {{ \Illuminate\Support\Js::from($testimonials->map(function($t) {
+                return [
+                    'name' => $t->getName(),
+                    'role' => $t->getPosition(),
+                    'location' => 'UFARMER Academy',
+                    'image' => $t->avatar && file_exists(public_path($t->avatar)) ? $t->avatar : 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&q=80',
+                    'content' => $t->getContent()
+                ];
+            })) }},
             changeSlide(newIndex) {
                 if (this.isTransitioning || newIndex === this.currentIndex) return;
                 this.isTransitioning = true;
