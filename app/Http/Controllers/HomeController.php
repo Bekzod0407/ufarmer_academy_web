@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Section;
+use App\Models\Partner;
+use App\Models\Service;
+use App\Models\Testimonial;
+use App\Models\Participant;
+use App\Models\SiteSetting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -13,7 +18,32 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // Fetch all active sections ordered
+        $sections = Section::active()->ordered()->with('contents')->get();
+
+        // Fetch active partners ordered
+        $partners = Partner::active()->ordered()->get();
+
+        // Fetch active services ordered
+        $services = Service::active()->ordered()->get();
+
+        // Fetch active testimonials ordered
+        $testimonials = Testimonial::active()->ordered()->get();
+
+        // Fetch active participants ordered
+        $participants = Participant::active()->ordered()->get();
+
+        // Fetch site settings
+        $siteSettings = SiteSetting::all()->pluck('value', 'key');
+
+        return view('home', compact(
+            'sections',
+            'partners',
+            'services',
+            'testimonials',
+            'participants',
+            'siteSettings'
+        ));
     }
 
     /**
@@ -37,9 +67,6 @@ class HomeController extends Controller
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
-        // Optional: Send email notification
-        // Mail::to('hello@farmeracademy.com')->send(new ContactFormSubmitted($validated));
 
         return back()->with('success', 'Thank you for contacting us! We will get back to you within 24 hours.');
     }
