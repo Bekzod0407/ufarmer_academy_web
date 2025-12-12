@@ -97,30 +97,9 @@
                                 </div>
 
                                 <div class="relative z-10">
-                                    <div class="flex items-start gap-4 mb-3">
-                                        @if($participant->photo && file_exists(public_path($participant->photo)))
-                                            <img src="{{ $participant->photo }}" alt="{{ $participant->getName() }}" class="w-16 h-16 rounded-full object-cover border-2 border-primary/30">
-                                        @else
-                                            <div class="w-16 h-16 rounded-full bg-muted/30 flex items-center justify-center border-2 border-primary/30">
-                                                <svg class="w-8 h-8 text-muted-foreground/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
-                                                </svg>
-                                            </div>
-                                        @endif
-                                        <div class="flex-1">
-                                            <h3 class="text-xl font-heading font-semibold text-foreground">
-                                                {{ $participant->getName() }}
-                                            </h3>
-                                            <p class="text-sm text-primary font-medium">
-                                                {{ $participant->getOrganization() }}
-                                            </p>
-                                            @if($participant->country)
-                                                <p class="text-xs text-muted-foreground">
-                                                    {{ $participant->country }}
-                                                </p>
-                                            @endif
-                                        </div>
-                                    </div>
+                                    <h3 class="text-xl font-heading font-semibold mb-3 text-foreground">
+                                        {{ $participant->getName() }}
+                                    </h3>
                                     <p class="text-foreground/75 font-body leading-relaxed text-base">
                                         {{ $participant->getBio() }}
                                     </p>
