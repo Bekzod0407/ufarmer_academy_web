@@ -242,6 +242,12 @@ return [
         ],
     ],
 
+    // Partners Section
+    'partners' => [
+        'title_white' => 'Our',
+        'title_gradient' => 'Partners',
+    ],
+
     // Footer
     'footer' => [
         'copyright' => 'All rights reserved.',

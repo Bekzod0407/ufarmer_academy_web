@@ -6,6 +6,7 @@
     @include('sections.hero')
     @include('sections.about')
     @include('sections.focus')
+    @include('sections.partners')
     @include('sections.participants')
     @include('sections.services')
     @include('sections.testimonials')

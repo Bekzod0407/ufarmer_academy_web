@@ -242,6 +242,12 @@ return [
         ],
     ],
 
+    // Partners Section
+    'partners' => [
+        'title_white' => 'Bizim',
+        'title_gradient' => 'Ortaklarımız',
+    ],
+
     // Footer
     'footer' => [
         'copyright' => 'Tüm hakları saklıdır.',

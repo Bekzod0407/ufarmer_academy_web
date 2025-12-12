@@ -252,28 +252,4 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000);
 
     // Removed body opacity animation for better performance
-
-    // Phone number formatting for contact form
-    const phoneInput = document.querySelector('input[name="phone"]');
-    if (phoneInput) {
-        phoneInput.addEventListener('input', function(e) {
-            let value = e.target.value.replace(/\D/g, '');
-
-            if (value.startsWith('998')) {
-                value = value.substring(3);
-            }
-
-            if (value.length > 9) {
-                value = value.substring(0, 9);
-            }
-
-            let formatted = '+998 ';
-            if (value.length > 0) formatted += value.substring(0, 2);
-            if (value.length > 2) formatted += ' ' + value.substring(2, 5);
-            if (value.length > 5) formatted += ' ' + value.substring(5, 7);
-            if (value.length > 7) formatted += ' ' + value.substring(7, 9);
-
-            e.target.value = formatted.trim();
-        });
-    }
 });

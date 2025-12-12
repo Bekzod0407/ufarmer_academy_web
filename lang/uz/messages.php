@@ -242,6 +242,12 @@ return [
         ],
     ],
 
+    // Partners Section
+    'partners' => [
+        'title_white' => 'Bizning',
+        'title_gradient' => 'Hamkorlarimiz',
+    ],
+
     // Footer
     'footer' => [
         'copyright' => 'Barcha huquqlar himoyalangan.',

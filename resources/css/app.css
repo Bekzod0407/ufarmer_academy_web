@@ -130,7 +130,7 @@
     .glass-card:hover {
         background: linear-gradient(145deg, rgba(74, 222, 128, 0.18), rgba(134, 239, 172, 0.12));
         border-color: rgba(74, 222, 128, 0.7);
-        transform: translateY(-4px) scale(1.02);
+        transform: translateY(-4px);
     }
 
     .glass-nav {
@@ -165,10 +165,10 @@
 
     .unified-section-bg, .about-bg, .focus-bg, .participants-bg, .testimonials-bg, .contact-bg {
         background: linear-gradient(135deg,
-            rgba(20, 20, 30, 0.75) 0%,
-            rgba(15, 25, 35, 0.70) 30%,
-            rgba(25, 30, 25, 0.65) 60%,
-            rgba(20, 25, 30, 0.75) 100%
+            rgba(20, 20, 30, 0.88) 0%,
+            rgba(15, 25, 35, 0.85) 30%,
+            rgba(25, 30, 25, 0.82) 60%,
+            rgba(20, 25, 30, 0.88) 100%
         ), url('/hero-farmland.jpg');
         background-size: cover;
         background-position: center;
